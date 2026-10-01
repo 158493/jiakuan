@@ -51,7 +51,7 @@ VPNGATE_MIRROR = os.environ.get(
     "https://raw.githubusercontent.com/fdciabdul/Vpngate-Scraper-API/main/json/data.json",
 )
 # 已部署的 Cloudflare Worker 检测接口 (GET /check?proxyip=host:port, 实测确认)
-WORKER_CHECK_URL = os.environ.get("CHECK_WORKER", "https://check.helei.kdns.fr/check?sstp=vpn:vpn@")
+WORKER_CHECK_URL = os.environ.get("CHECK_WORKER", "jiakuan.ouic.kdns.fr/check?sstp=vpn:vpn@")
 CONCURRENCY = max(1, int(os.environ.get("CHECK_CONCURRENCY", "32")))   # 与 Worker 网页端一致的并发模型
 CHECK_TIMEOUT = float(os.environ.get("CHECK_TIMEOUT", "90"))          # 单请求客户端超时 (秒)
 MAX_CHECK_NODES = int(os.environ.get("MAX_CHECK_NODES", "0"))         # 0=不限; 本地测试可设小值
@@ -460,8 +460,8 @@ EDGE_HOSTS = [
     h.strip()
     for h in os.environ.get(
         "EDGE_HOSTS",
-        "saas.072159.xyz:443,hzytjy.cn:443,ali.nonull.pp.ua:443,auto.dolby.dpdns.org:443,"
-        "cdn.cnno.de:443,saas.sin.fan:443,cf.777791.xyz:443",
+        "cf.92555.xyz,www.galgamex.net,cf.itv888.cn,cf.nyanya.moe,cdn.ctn32.us.kg,www.5199dy.com,cf.1o.ee,stores.staples.com,www.broadcom.com,p.etime.vip,101yaoye.com,kickstarter.com,coreweave.com,www.sloomb.com,ali.nonull.pp.ua,www.shopify.com,www.blibli.com,spring.io,mfa.gov.ua,www.dbs.com.sg,www.bis.gov,jobsdb.com,cf-cname.xingpingcn.top,hzytjy.cn,vps.cheng2001.top,saas.sin.fan,www.mfyx.cn,img.css.sd,thebeat.gehealthcare.com,ahrefs.com,cdn.667891.xyz,www.sage.com,prizepicks.com,baota.us.kg,funko.com,www.wto.org,www.deepl.com,constitution.congress.gov,www.vmware.com,www.giannidelprete.it,store.ubi.com,kniu.cc,linear.app,ex.warspite.dpdns.org,cf.3666888.xyz,egov.uscis.gov,eii.at,www.visa.com.sg,registry.npmjs.org,videodelivery.net,www.mastervolt.com,cf.877774.xyz,stonexbullion.com,rankmath.com,help.kolet.com,debot.ai,www.whatismyip.com,appstorrent.ru,shen6011.pages.dev,aandd.co.jp,api2-ide.imgnxa.com,brandstudio.com,www.vastnovel.com,www.doiting.com,upfile.live,glitterx.cloud,dev.graco.com,leawo.org,www.apnic.net,api.producthunt.com,networksolutions.com,assets.bizclikmedia.net,w3.org,mrmacintosh.com,bitsight.com,www.trump.com,aftership.com,mvnrepository.com,digitalocean.com,smapi.xystem138.com,www.whoer.net,chrono24.com,envato.com,fbi.gov,9mod.com,registry.yarnpkg.com,page.mercer.com,pure.coupert.com,www.copilot.com,mogas.com,bestcf.030101.xyz,www.petronaftco.com,hitcon.org,email.lg.com,aqua-aria.company,crinacle.com,cdn.204910.best,nodeloc.cc,www.itedev.com,ping.pe,guide.for.edu.sg,absen.com,gateway.ipfsscan.io,cu.zxy88.eu.org,cloudflare.tv,mokeedev.com,cdnjs.com,codeforces.com,icook.tw,www.eccu.edu,builtbybuffalo.com,www.meteorelectrical.com,i.pages.dev,nodejs.org,garuda-indonesia.com,www.stayaka.com,www.hypixel.net,www.trumpgolf.com,moegirl.icu,mail.zrf.me,redis.io,wallpaperflare.com,aimagazine.com,investor.apple.com,cf.777791.xyz,ippure.com,ooo.0o0.ooo,noc.one,encryptedsni.com,cloudflare-ip.mofashi.ltd,www.epicgames.com,api-scout.reflexapi.net,my.vultr.com,tracker.metricool.com,wsrv.nl,hubspot.com,cdn.nodeimage.com,www.timbuktutravel.com,cf.0sm.com,www.applevis.com,jojolsj.jojojing.top,ncdc.gov.ng,macked.app,worldvectorlogo.com,www.jsdelivr.com,www.moc.gov.tw,cdn.tzpro.xyz,lose.edu.eu.org,bizclikmedia.com,tinyurl.com,cozylife.app,fonts.cdnfonts.com,rarbg.proxyninja.org,vegasgeek.com,cf.qq.ms,sanctuarywealth.com,i.pixiv.re,s.bookcdn.com,fn.130519.xyz,emos.prlo.de"
+        "cf.drxian.dpdns.org,www.pixelexperience.org,t.213891.xyz,dl.macked.app,mox.moxing.lol,www.transgenderdor.org,esm.run,qoj.ac,zen-browser.app,store.rg-adguard.net,rargb.to,hy.aaw.qzz.io,nist.gov,store.ubisoft.com,informahealthcare.com,47bt.com,vueframework.com,centerofthewest.org,seo.07yue.com,s.ee,ip.sb,buyshoes.shop,kernelsu.com,www2.rarbggo.to,stlouiscountymo.gov,icook.hk,i.111666.best,sci-hub.al,i.jpg.dog,academy.mastercard.com,hentaiverse.org,99.co,totoro.im,dash.domain.digitalplat.org,www.hugedomains.com,clickhouse.com,xn--b6gac.eu.org,moodle.org,cdn.7zz.cn",
     ).split(",")
     if h.strip()
 ]
@@ -522,8 +522,8 @@ def build_hosts_text(data):
 
 
 # edgetunnel 完整订阅 (vless://) 配置
-EDT_UUID = os.environ.get("EDT_UUID", "90c14586-42a5-4c30-959d-8b36608d67f7")
-EDT_DOMAIN = os.environ.get("EDT_DOMAIN", "ed.xiaolei.qzz.io")
+EDT_UUID = os.environ.get("EDT_UUID", "4ad1ea22-02de-4f57-a005-18febc4259f2")
+EDT_DOMAIN = os.environ.get("EDT_DOMAIN", "jiakuan1.ouic.kdns.fr")
 EDT_FINGERPRINT = os.environ.get("EDT_FINGERPRINT", "chrome")
 SUB_URL = os.environ.get("SUB_URL", "https://jerylihub.github.io/gate/sub.txt")
 
